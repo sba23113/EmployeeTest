@@ -10,6 +10,11 @@ public class Company {
         this.companyName = "company";
         this.staff = new ArrayList<>();
     }
+
+    public Company(String companyName) {
+        this.companyName = companyName;
+        this.staff = new ArrayList<>();
+    }  
     
     
 }
