@@ -35,4 +35,8 @@ public class Employee {
             this.email = email;
         }
     }
+    
+    public static int getNextEmpNum() {
+        return nextEmpNum;
+    }
 }
