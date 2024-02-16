@@ -1,5 +1,8 @@
 package employeetest;
 
-public class Company {
+import java.util.ArrayList;
 
+public class Company {
+    private String companyName;
+    private ArrayList<Employee> staff;
 }
