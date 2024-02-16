@@ -19,4 +19,8 @@ public class Company {
     public void addNewStaff(Employee employee) {
         staff.add(employee);
     }
+    
+    public int getStaffNumber() {
+        return staff.size();
+    }
 }
