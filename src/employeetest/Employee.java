@@ -17,4 +17,18 @@ public class Employee {
         this.email = email;
         this.empNum = nextEmpNum++;
     }    
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getEmpNum() {
+        return empNum;
+    }
+    
+    
 }
