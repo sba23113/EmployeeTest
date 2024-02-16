@@ -12,6 +12,8 @@ public class EmployeeTest {
         projectGroup[0] = employee1;
         projectGroup[1] = employee2;
         projectGroup[2] = employee3;
+        
+        System.out.println(Employee.getNextEmpNum());
     }
     
 }
