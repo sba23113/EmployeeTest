@@ -30,5 +30,9 @@ public class Employee {
         return empNum;
     }
     
-    
+    public void setEmail(String email) {
+        if (email.length() > 3) {
+            this.email = email;
+        }
+    }
 }
