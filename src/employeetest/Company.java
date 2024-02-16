@@ -1,6 +1,7 @@
 package employeetest;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Company {
     private String companyName;
@@ -22,5 +23,16 @@ public class Company {
     
     public int getStaffNumber() {
         return staff.size();
+    }
+    
+    public void listEmployees(int employeeNumber) {
+        Iterator<Employee> iterator = staff.iterator();
+        
+        while (iterator.hasNext()) {
+            Employee employee = iterator.next();
+            if (employee.getEmpNum() > employeeNumber) {
+                System.out.println(employee.getName());
+            }
+        }
     }
 }
