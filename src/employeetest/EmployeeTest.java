@@ -16,9 +16,9 @@ public class EmployeeTest {
         System.out.println(Employee.getNextEmpNum());
         
         int m = 1;
-        for (Employee emp : projectGroup) {
-            if (emp.getEmpNum() > m) {
-                System.out.println(emp.getName());
+        for (Employee e : projectGroup) {
+            if (e.getEmpNum() > m) {
+                System.out.println(e.getName());
             }
         }
     }
