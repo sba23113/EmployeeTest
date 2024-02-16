@@ -4,16 +4,17 @@ public class Employee {
     private String name;
     private String email;
     private int empNum;
+    private static int nextEmpNum = 1;
 
-    public Employee(int empNum) {
+    public Employee() {
         this.name = "John Doe";
         this.email = "john.doe@email.com";
-        this.empNum = empNum;
+        this.empNum = nextEmpNum++;
     }
 
-    public Employee(String name, String email, int empNum) {
+    public Employee(String name, String email) {
         this.name = name;
         this.email = email;
-        this.empNum = empNum;
+        this.empNum = nextEmpNum++;
     }    
 }
