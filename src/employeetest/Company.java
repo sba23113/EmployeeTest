@@ -16,5 +16,7 @@ public class Company {
         this.staff = new ArrayList<>();
     }  
     
-    
+    public void addNewStaff(Employee employee) {
+        staff.add(employee);
+    }
 }
