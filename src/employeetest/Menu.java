@@ -23,7 +23,6 @@ public class Menu {
             System.out.println("");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            System.out.println("");
             // consume any newline characters left in scanner buffer
             scanner.nextLine();
 
@@ -52,9 +51,16 @@ public class Menu {
                         scanner.nextLine();
 
                         if (managerChoice == 1) {
+                            System.out.println("Current employees:");
                             company.listEmployees(0);
                         } else if (managerChoice == 2) {
-                            System.out.println("2");
+                            System.out.println("Add new employee's details:");
+                            System.out.print("Enter employee's name: ");
+                            String name = scanner.nextLine();
+                            System.out.print("Enter employee's email: ");
+                            String email = scanner.nextLine();
+                            Employee newEmp = new Employee(name, email);
+                            company.addNewStaff(newEmp);
                         } else if (managerChoice == 3) {
                             System.out.println("3");
                         } else if (managerChoice == 0) {
