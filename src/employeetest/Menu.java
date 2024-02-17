@@ -52,7 +52,7 @@ public class Menu {
                         scanner.nextLine();
 
                         if (managerChoice == 1) {
-                            System.out.println("1");
+                            company.listEmployees(0);
                         } else if (managerChoice == 2) {
                             System.out.println("2");
                         } else if (managerChoice == 3) {
