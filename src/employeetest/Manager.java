@@ -4,7 +4,7 @@ public class Manager extends Employee {
     private String username;
     private String password;
 
-    public Manager(String username, String password, String name, String email) {
+    public Manager(String name, String email, String username, String password) {
         super(name, email);
         this.username = username;
         this.password = password;
