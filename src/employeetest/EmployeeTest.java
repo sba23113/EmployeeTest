@@ -29,6 +29,8 @@ public class EmployeeTest {
         for (Employee e : projectGroup) {
             company.addNewStaff(e);
         }
+        
+        menu.displayMenu();
     }
     
 }
