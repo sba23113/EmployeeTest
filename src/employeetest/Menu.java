@@ -15,7 +15,6 @@ public class Menu {
     
     public void displayMenu() {
         while (true) {
-            System.out.println("");
             System.out.println("****************************************************************************");
             System.out.println("Employee Management System for People Managers");
             System.out.println("****************************************************************************");
@@ -34,7 +33,37 @@ public class Menu {
                 System.out.print("Enter password: ");
                 String password = scanner.nextLine();
                 if (username.equals(manager.getUsername()) && password.equals(manager.getPassword())) {
-                    System.out.println("Logged in!");
+                    System.out.println("");
+                    System.out.printf("Welcome %s! \n", manager.getName());
+                    while (true) {
+                        System.out.println("");
+                        System.out.println("****************************************************************************");
+                        System.out.printf("Staff Administration (Logged in as '%s') \n", username);
+                        System.out.println("****************************************************************************");
+                        System.out.println("1) View staff");
+                        System.out.println("2) Add new member of staff");
+                        System.out.println("3) Remove member of staff");
+                        System.out.println("0) Logout");
+                        System.out.println("");
+                        System.out.print("Enter your choice: ");
+                        int managerChoice = scanner.nextInt();
+                        System.out.println("");
+                        // consume any newline characters left in scanner buffer
+                        scanner.nextLine();
+
+                        if (managerChoice == 1) {
+                            System.out.println("1");
+                        } else if (managerChoice == 2) {
+                            System.out.println("2");
+                        } else if (managerChoice == 3) {
+                            System.out.println("3");
+                        } else if (managerChoice == 0) {
+                            break;
+                        }
+                    }
+                } else {
+                    System.out.println("");
+                    System.out.println("!! Invalid username or password !!");
                 }
             } else if (choice == 0) {
                 break;

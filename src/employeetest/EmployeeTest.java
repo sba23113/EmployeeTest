@@ -23,7 +23,7 @@ public class EmployeeTest {
         }
         
         Company company = new Company("Business Gnómes Ltd");
-        Manager manager = new Manager("Tim Apple", "tim.apple@gnomes.com", "Gnomeo", "smurf");
+        Manager manager = new Manager("Gnomeo Mountaindew", "gnomeo.mountaindew@gnomes.com", "Gnomeo", "smurf");
         Menu menu = new Menu(company, manager);
         
         for (Employee e : projectGroup) {
