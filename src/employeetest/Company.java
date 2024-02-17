@@ -36,15 +36,17 @@ public class Company {
         }
     }
     
-    public void removeStaff(int empNum) {
+    public boolean removeStaff(int empNum) {
         Iterator<Employee> iterator = staff.iterator();
         
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
             if (employee.getEmpNum() == empNum) {
                 iterator.remove();
-                break;
+                return true;
             }
         }
+        
+        return false;
     }
 }

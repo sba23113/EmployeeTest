@@ -51,18 +51,29 @@ public class Menu {
                         scanner.nextLine();
 
                         if (managerChoice == 1) {
-                            System.out.println("Current employees:");
+                            System.out.println("***Current employees***");
                             company.listEmployees(0);
                         } else if (managerChoice == 2) {
-                            System.out.println("Add new employee's details:");
-                            System.out.print("Enter employee's name: ");
+                            System.out.println("***Add new employee details***");
+                            System.out.print("Enter employee name: ");
                             String name = scanner.nextLine();
-                            System.out.print("Enter employee's email: ");
+                            System.out.print("Enter employee email: ");
                             String email = scanner.nextLine();
                             Employee newEmp = new Employee(name, email);
                             company.addNewStaff(newEmp);
+                            System.out.printf("%s added to employee database." , name);
+                            System.out.println("");
                         } else if (managerChoice == 3) {
-                            System.out.println("3");
+                            System.out.println("***Remove employee from database***");
+                            System.out.print("Enter ID of employee to be removed: ");
+                            int empNum = scanner.nextInt();
+                            boolean isRemoved = company.removeStaff(empNum);
+                            if (isRemoved) {
+                                System.out.printf("Employee ID '%d' removed from employee database." , empNum);
+                            } else {
+                                System.out.printf("Employee ID '%d' not found." , empNum);
+                            }                            
+                            System.out.println("");
                         } else if (managerChoice == 0) {
                             break;
                         }
