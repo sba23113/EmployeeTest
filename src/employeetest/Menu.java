@@ -25,9 +25,17 @@ public class Menu {
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             System.out.println("");
+            // consume any newline characters left in scanner buffer
+            scanner.nextLine();
 
             if (choice == 1) {
-                System.out.print("Logged in!");
+                System.out.print("Enter username: ");
+                String username = scanner.nextLine();
+                System.out.print("Enter password: ");
+                String password = scanner.nextLine();
+                if (username.equals(manager.getUsername()) && password.equals(manager.getPassword())) {
+                    System.out.println("Logged in!");
+                }
             } else if (choice == 0) {
                 break;
             }
