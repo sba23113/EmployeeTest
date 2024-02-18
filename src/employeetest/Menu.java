@@ -88,7 +88,7 @@ public class Menu {
         while (true) {
             System.out.print("Enter employee name: ");
             name = scanner.nextLine();
-            if (!name.isEmpty()) {
+            if (!name.trim().isEmpty()) {
                 break;
             } else {
                 System.out.println("Name cannot be empty. Please try again.");
