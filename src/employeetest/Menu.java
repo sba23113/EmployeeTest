@@ -58,25 +58,10 @@ public class Menu {
                                     company.listEmployees(0);
                                     break;
                                 case 2:
-                                    System.out.println("***Add new employee details***");
-                                    System.out.print("Enter employee name: ");
-                                    String name = scanner.nextLine();
-                                    System.out.print("Enter employee email: ");
-                                    String email = scanner.nextLine();
-                                    Employee newEmp = new Employee(name, email);
-                                    company.addNewStaff(newEmp);
-                                    System.out.printf("%s added to employee database.\n", name);
+                                    addNewStaff();
                                     break;
                                 case 3:
-                                    System.out.println("***Remove employee from database***");
-                                    System.out.print("Enter ID of employee to be removed: ");
-                                    int empNum = scanner.nextInt();
-                                    boolean isRemoved = company.removeStaff(empNum);
-                                    if (isRemoved) {
-                                        System.out.printf("Employee ID '%d' removed from employee database.\n", empNum);
-                                    } else {
-                                        System.out.printf("Employee ID '%d' not found.\n", empNum);
-                                    }
+                                    removeStaff();
                                     break;
                                 case 0:
                                     break;
@@ -97,6 +82,29 @@ public class Menu {
                  // Consume the invalid input
                 scanner.nextLine();
             }
+        }
+    }
+    
+    private void addNewStaff() {
+        System.out.println("***Add new employee details***");
+        System.out.print("Enter employee name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter employee email: ");
+        String email = scanner.nextLine();
+        Employee newEmp = new Employee(name, email);
+        this.company.addNewStaff(newEmp);
+        System.out.printf("%s added to employee database.\n", name);
+    }
+    
+    private void removeStaff() {
+        System.out.println("***Remove employee from database***");
+        System.out.print("Enter ID of employee to be removed: ");
+        int empNum = scanner.nextInt();
+        boolean isRemoved = company.removeStaff(empNum);
+        if (isRemoved) {
+            System.out.printf("Employee ID '%d' removed from employee database.\n", empNum);
+        } else {
+            System.out.printf("Employee ID '%d' not found.\n", empNum);
         }
     }
 }
