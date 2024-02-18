@@ -15,7 +15,9 @@ public class Menu {
     }
     
     public void displayMenu() {
-        while (true) {
+        boolean isRunning = true;
+        while (isRunning) {
+            System.out.println("");
             System.out.println("****************************************************************************");
             System.out.println("Employee Management System for People Managers");
             System.out.println("****************************************************************************");
@@ -35,7 +37,8 @@ public class Menu {
                     System.out.println("");
                     System.out.printf("Welcome %s! \n", manager.getName());
                     
-                    while (true) {
+                    boolean isManagerLoggedIn = true;
+                    while (isManagerLoggedIn) {
                         System.out.println("");
                         System.out.println("****************************************************************************");
                         System.out.printf("Staff Administration (Logged in as '%s') \n", username);
@@ -60,7 +63,9 @@ public class Menu {
                                 removeStaff();
                                 break;
                             case 0:
-                                break;
+                                System.out.println("You have been logged out!");
+                                isManagerLoggedIn = false;
+                                break; 
                             default:
                                 System.out.println("Invalid choice");
                                 break;
@@ -71,7 +76,7 @@ public class Menu {
                     System.out.println("!! Invalid username or password !!");
                 }
             } else if (choice == 0) {
-                break;
+                isRunning = false;
             }            
         }
     }
