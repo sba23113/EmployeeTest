@@ -8,7 +8,7 @@ public class Employee {
 
     public Employee() {
         this.name = "John Doe";
-        this.email = "john.doe@email.com";
+        this.email = "john.doe@gnomes.com";
         this.empNum = nextEmpNum++;
     }
 

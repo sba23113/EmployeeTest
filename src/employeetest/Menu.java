@@ -53,6 +53,7 @@ public class Menu {
 
                         switch (managerChoice) {
                             case 1:
+                                System.out.println("");
                                 System.out.println("***Current employees***");
                                 company.listEmployees(0);
                                 break;
@@ -101,10 +102,12 @@ public class Menu {
         Employee newEmp = new Employee(name, email);
         this.company.addNewStaff(newEmp);
         
+        System.out.println("");
         System.out.printf("%s added to employee database.\n", name);
     }
     
     private void removeStaff() {
+        System.out.println("");
         System.out.println("***Remove employee from database***");
         System.out.print("Enter ID of employee to be removed: ");
         int empNum = getIntInput();
