@@ -4,9 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    private Scanner scanner;
-    private Company company;
-    private Manager manager;
+    private final Scanner scanner;
+    private final Company company;
+    private final Manager manager;
   
     public Menu(Company company, Manager manager) {
         this.scanner = new Scanner(System.in);
