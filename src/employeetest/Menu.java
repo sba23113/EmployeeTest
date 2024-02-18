@@ -83,8 +83,18 @@ public class Menu {
     
     private void addNewStaff() {
         System.out.println("***Add new employee details***");
-        System.out.print("Enter employee name: ");
-        String name = scanner.nextLine();        
+        
+        String name;
+        while (true) {
+            System.out.print("Enter employee name: ");
+            name = scanner.nextLine();
+            if (!name.isEmpty()) {
+                break;
+            } else {
+                System.out.println("Name cannot be empty. Please try again.");
+            }
+        }
+        
         System.out.print("Enter employee email: ");
         String email = scanner.nextLine();
         
