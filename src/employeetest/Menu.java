@@ -24,9 +24,7 @@ public class Menu {
                 System.out.println("0) Exit");
                 System.out.println("");
                 System.out.print("Enter your choice: ");
-                int choice = scanner.nextInt();
-                // consume any newline characters left in scanner buffer
-                scanner.nextLine();
+                int choice = getIntInput();
 
                 if (choice == 1) {
                     System.out.print("Enter username: ");
@@ -47,10 +45,7 @@ public class Menu {
                             System.out.println("0) Logout");
                             System.out.println("");
                             System.out.print("Enter your choice: ");
-                            int managerChoice = scanner.nextInt();
-                            System.out.println("");
-                            // consume any newline characters left in scanner buffer
-                            scanner.nextLine();
+                            int managerChoice = getIntInput();
 
                             switch (managerChoice) {
                                 case 1:
@@ -88,23 +83,32 @@ public class Menu {
     private void addNewStaff() {
         System.out.println("***Add new employee details***");
         System.out.print("Enter employee name: ");
-        String name = scanner.nextLine();
+        String name = scanner.nextLine();        
         System.out.print("Enter employee email: ");
         String email = scanner.nextLine();
+        
         Employee newEmp = new Employee(name, email);
         this.company.addNewStaff(newEmp);
+        
         System.out.printf("%s added to employee database.\n", name);
     }
     
     private void removeStaff() {
         System.out.println("***Remove employee from database***");
         System.out.print("Enter ID of employee to be removed: ");
-        int empNum = scanner.nextInt();
+        int empNum = getIntInput();
         boolean isRemoved = company.removeStaff(empNum);
         if (isRemoved) {
             System.out.printf("Employee ID '%d' removed from employee database.\n", empNum);
         } else {
             System.out.printf("Employee ID '%d' not found.\n", empNum);
         }
+    }
+    
+    private int getIntInput() {
+        int input = scanner.nextInt();
+        // consume any newline characters left in scanner buffer
+        scanner.nextLine();
+        return input;
     }
 }
