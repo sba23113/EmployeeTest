@@ -52,33 +52,37 @@ public class Menu {
                             // consume any newline characters left in scanner buffer
                             scanner.nextLine();
 
-    // switch satement here instead
-                            if (managerChoice == 1) {
-                                System.out.println("***Current employees***");
-                                company.listEmployees(0);
-                            } else if (managerChoice == 2) {
-                                System.out.println("***Add new employee details***");
-                                System.out.print("Enter employee name: ");
-                                String name = scanner.nextLine();
-                                System.out.print("Enter employee email: ");
-                                String email = scanner.nextLine();
-                                Employee newEmp = new Employee(name, email);
-                                company.addNewStaff(newEmp);
-                                System.out.printf("%s added to employee database." , name);
-                                System.out.println("");
-                            } else if (managerChoice == 3) {
-                                System.out.println("***Remove employee from database***");
-                                System.out.print("Enter ID of employee to be removed: ");
-                                int empNum = scanner.nextInt();
-                                boolean isRemoved = company.removeStaff(empNum);
-                                if (isRemoved) {
-                                    System.out.printf("Employee ID '%d' removed from employee database." , empNum);
-                                } else {
-                                    System.out.printf("Employee ID '%d' not found." , empNum);
-                                }                            
-                                System.out.println("");
-                            } else if (managerChoice == 0) {
-                                break;
+                            switch (managerChoice) {
+                                case 1:
+                                    System.out.println("***Current employees***");
+                                    company.listEmployees(0);
+                                    break;
+                                case 2:
+                                    System.out.println("***Add new employee details***");
+                                    System.out.print("Enter employee name: ");
+                                    String name = scanner.nextLine();
+                                    System.out.print("Enter employee email: ");
+                                    String email = scanner.nextLine();
+                                    Employee newEmp = new Employee(name, email);
+                                    company.addNewStaff(newEmp);
+                                    System.out.printf("%s added to employee database.\n", name);
+                                    break;
+                                case 3:
+                                    System.out.println("***Remove employee from database***");
+                                    System.out.print("Enter ID of employee to be removed: ");
+                                    int empNum = scanner.nextInt();
+                                    boolean isRemoved = company.removeStaff(empNum);
+                                    if (isRemoved) {
+                                        System.out.printf("Employee ID '%d' removed from employee database.\n", empNum);
+                                    } else {
+                                        System.out.printf("Employee ID '%d' not found.\n", empNum);
+                                    }
+                                    break;
+                                case 0:
+                                    break;
+                                default:
+                                    System.out.println("Invalid choice");
+                                    break;
                             }
                         }
                     } else {
