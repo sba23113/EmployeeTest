@@ -30,6 +30,8 @@ public class EmployeeTest {
             company.addNewStaff(e);
         }
         
+        company.addNewStaff(manager);
+        
         menu.displayMenu();
     }
     
