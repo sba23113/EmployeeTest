@@ -4,6 +4,7 @@ public class Manager extends Employee {
     private String username;
     private String password;
 
+    // constuctor calls superclass (Employee) constructor and initializes username and password fields
     public Manager(String name, String email, String username, String password) {
         super(name, email);
         this.username = username;

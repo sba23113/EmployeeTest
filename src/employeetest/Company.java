@@ -25,6 +25,7 @@ public class Company {
         return staff.size();
     }
     
+    // find in the staff arraylist all employees above a given employee number value and print the names of these employees
     public void listEmployees(int employeeNumber) {
         Iterator<Employee> iterator = staff.iterator();
         
@@ -36,6 +37,7 @@ public class Company {
         }
     }
     
+    // remove an employee (ID given as parameter) from the staff arrayist
     public boolean removeStaff(int empNum) {
         Iterator<Employee> iterator = staff.iterator();
         

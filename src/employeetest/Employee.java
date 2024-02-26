@@ -14,6 +14,7 @@ public class Employee {
         this.empNum = nextEmpNum++;
     }
 
+    // constructor with name and email validation -> throw error if criteria not met
     public Employee(String name, String email)  throws IllegalArgumentException {        
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("!!!Name cannot be empty!!!\n");
