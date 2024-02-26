@@ -15,8 +15,12 @@ public class Employee {
     }
 
     public Employee(String name, String email)  throws IllegalArgumentException {        
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("!!!Name cannot be empty!!!\n");
+        }
+        
         if (!isEmailAddressValid(email)) {
-            throw new IllegalArgumentException("Email format incorrect.");            
+            throw new IllegalArgumentException("!!!Email format incorrect!!!\n");            
         }  
         
         this.name = name;
@@ -46,7 +50,7 @@ public class Employee {
     
     /*
     email validation regex pattern based on RFC 5322 format sourced from:
-    https://www.baeldung.com/java-email-validation-regex#regular-expression-by-rfc-5322-for-email-validation
+    https://emailregex.com
     */
     private boolean isEmailAddressValid(String email) {
         if (email.length() <= emailMinLength || email.length() > emailMaxLength) {

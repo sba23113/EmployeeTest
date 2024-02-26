@@ -86,18 +86,9 @@ public class Menu {
         System.out.println("");
         System.out.println("***Add new employee details***");
         
-        String name;
         while (true) {
             System.out.print("Enter employee name: ");
-            name = scanner.nextLine();
-            if (!name.trim().isEmpty()) {
-                break;
-            } else {
-                System.out.println("Name cannot be empty. Please try again.");
-            }
-        }
-                
-        while (true) {
+            String name = scanner.nextLine();
             System.out.print("Enter employee email: ");
             String email = scanner.nextLine();
 
@@ -108,7 +99,7 @@ public class Menu {
                 System.out.printf("%s added to employee database.\n", name);
                 break;
             } catch (IllegalArgumentException e) {
-                System.out.println("Email format incorrect. Please try again.");
+                System.out.println(e.getMessage());
             }
         }
     }
