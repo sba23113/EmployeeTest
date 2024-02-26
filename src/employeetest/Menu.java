@@ -83,6 +83,7 @@ public class Menu {
     }
     
     private void addNewStaff() {
+        System.out.println("");
         System.out.println("***Add new employee details***");
         
         String name;
@@ -95,15 +96,21 @@ public class Menu {
                 System.out.println("Name cannot be empty. Please try again.");
             }
         }
-        
-        System.out.print("Enter employee email: ");
-        String email = scanner.nextLine();
-        
-        Employee newEmp = new Employee(name, email);
-        this.company.addNewStaff(newEmp);
-        
-        System.out.println("");
-        System.out.printf("%s added to employee database.\n", name);
+                
+        while (true) {
+            System.out.print("Enter employee email: ");
+            String email = scanner.nextLine();
+
+            try {
+                Employee newEmp = new Employee(name, email);
+                this.company.addNewStaff(newEmp);
+                System.out.println("");
+                System.out.printf("%s added to employee database.\n", name);
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Email format incorrect. Please try again.");
+            }
+        }
     }
     
     private void removeStaff() {
@@ -115,7 +122,7 @@ public class Menu {
         boolean isRemoved = company.removeStaff(empNum);
         
         if (isRemoved) {
-            System.out.printf("Employee ID '%d' removed from employee database.\n", empNum);
+            System.out.printf("Employee ID '%d' removed from database.\n", empNum);
         } else {
             System.out.printf("Employee ID '%d' not found.\n", empNum);
         }
@@ -134,5 +141,5 @@ public class Menu {
                 scanner.nextLine();
             }
         }
-    }
+    }    
 }

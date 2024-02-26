@@ -31,7 +31,7 @@ public class Company {
         while (iterator.hasNext()) {
             Employee employee = iterator.next();
             if (employee.getEmpNum() > employeeNumber) {
-                System.out.println(employee.getName());
+                System.out.printf("ID: %d - %s\n", employee.getEmpNum(), employee.getName());
             }
         }
     }
