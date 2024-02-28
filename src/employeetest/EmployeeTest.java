@@ -34,14 +34,7 @@ public class EmployeeTest {
         // create an Instance of Company, Manager and Menu classes
         Company company = new Company("Business Gnómes Ltd");
         Manager manager = new Manager("Gnomeo Mountaindew", "gnomeo.mountaindew@gnomes.com", "Gnomeo", "smurf");
-        Menu menu = new Menu(company, manager);
-        
-        // populate staff ArrayList in company object with above created employee objects and the manager
-        for (Employee e : projectGroup) {
-            company.addNewStaff(e);
-        }
-        
-        company.addNewStaff(manager);
+        Menu menu = new Menu(company, manager);        
         
         // launch menu in console
         menu.displayMenu();
